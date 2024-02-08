@@ -12,3 +12,25 @@ const dbConfig = {
 };
 
 const db = new Database(dbConfig);
+
+async function employeeManagerApp() {
+    console.log('Welcome to your Employee Management System!');
+  
+    while (true) {
+      const { choice } = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'choice',
+          message: 'What would you like to do?',
+          choices: [
+            'View all departments',
+            'View all roles',
+            'View all employees',
+            'Add a department',
+            'Add a role',
+            'Add an employee',
+            'Update an employee role',
+            'Exit'
+          ]
+        }
+      ]);
