@@ -1,9 +1,9 @@
 -- Insert departments
 INSERT INTO department (name) 
-    VALUES  ('Legal');
-            ('Finance');
-            ('Engineering');
-            ('Sales');
+VALUES  ('Legal');
+        ('Finance');
+        ('Engineering');
+        ('Sales');
 
 -- INSERT INTO department (name) VALUES ('Finance');
 -- INSERT INTO department (name) VALUES ('Sales');

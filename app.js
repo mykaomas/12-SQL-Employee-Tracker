@@ -34,3 +34,33 @@ async function employeeManagementSystem() {
           ]
         }
       ]);
+
+    switch (choice) {
+        case 'View all departments':
+          await viewDepartments();
+          break;
+        case 'View all roles':
+          await viewRoles();
+          break;
+        case 'View all employees':
+          await viewEmployees();
+          break;
+        case 'Add a department':
+          await addDepartment();
+          break;
+        case 'Add a role':
+          await addRole();
+          break;
+        case 'Add an employee':
+          await addEmployee();
+          break;
+        case 'Update an employee role':
+          await updateEmployeeRole();
+          break;
+        case 'Exit':
+          console.log('Goodbye!');
+          await db.close(); // Close MySQL connection
+          return;
+      }
+    }
+  }
