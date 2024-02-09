@@ -63,6 +63,12 @@ async function employeeManagementSystem() {
           return;
       }
     }
+
+    async function viewDepartments() {
+        const departments = await db.viewDepartments();
+        console.log("Departments:", departments);
+        console.table(departments);
+      }
   }
 
 employeeManagementSystem()
