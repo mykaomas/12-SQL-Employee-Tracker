@@ -20,9 +20,9 @@ class Database {
 
   async viewRoles() {
     return await this.query(`
-      SELECT role.id, title, salary, department.name AS department
-      FROM role
-      INNER JOIN department ON role.department_id = department.id
+      SELECT job.id, title, salary, department.name AS department
+      FROM job
+      INNER JOIN department ON job.department_id = department.id
     `);
   }
 
