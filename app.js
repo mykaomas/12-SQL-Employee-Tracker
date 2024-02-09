@@ -23,9 +23,9 @@ async function employeeManagementSystem() {
           name: 'choice',
           message: 'What would you like to do?',
           choices: [
-            'View all departments',
-            'View all roles',
-            'View all employees',
+            'View departments',
+            'View roles',
+            'View employees',
             'Add a department',
             'Add a role',
             'Add an employee',
@@ -36,13 +36,13 @@ async function employeeManagementSystem() {
       ]);
 
     switch (choice) {
-        case 'View all departments':
+        case 'View departments':
           await viewDepartments();
           break;
-        case 'View all roles':
+        case 'View roles':
           await viewRoles();
           break;
-        case 'View all employees':
+        case 'View employees':
           await viewEmployees();
           break;
         case 'Add a department':
@@ -59,7 +59,7 @@ async function employeeManagementSystem() {
           break;
         case 'Exit':
           console.log('Goodbye!');
-          await db.close(); // Close MySQL connection
+          await db.close();
           return;
       }
     }

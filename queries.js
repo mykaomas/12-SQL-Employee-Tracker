@@ -10,6 +10,21 @@ class Database {
     return rows;
   }
 
+  async close() {
+    await this.pool.end();
+  }
+
+  async viewAllDepartments() {
+    return await this.query('SELECT id, name FROM department');
+  }
+
+  async viewRoles() {
+    return await this.query(`
+      SELECT role.id, title, salary, department.name AS department
+      FROM role
+      INNER JOIN department ON role.department_id = department.id
+    `);
+  }
 
 }
 
