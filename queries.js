@@ -14,7 +14,7 @@ class Database {
     await this.pool.end();
   }
 
-  async viewAllDepartments() {
+  async viewDepartments() {
     return await this.query('SELECT id, name FROM department');
   }
 
@@ -22,6 +22,15 @@ class Database {
     return await this.query(`
       SELECT role.id, title, salary, department.name AS department
       FROM role
+      INNER JOIN department ON role.department_id = department.id
+    `);
+  }
+
+  async viewEmployees() {
+    return await this.query(`
+      SELECT employee.id, first_name, last_name, title AS role, salary, department.name AS department
+      FROM employee
+      INNER JOIN role ON employee.role_id = role.id
       INNER JOIN department ON role.department_id = department.id
     `);
   }

@@ -30,14 +30,14 @@ VALUES  ('Lawyer', 190000, 1);
 
 -- Insert employees
 INSERT INTO employee (first_name, last_name, role_id, manager_id) 
-    VALUES  ('Michael', 'Scott', 1, 6);
-            ('Dwight', 'Schrute', 2, 1);
-            ('Jim', 'Halpert', 3, NULL);
-            ('Stanley', 'Hudson', 4, NULL);
-            ('Andy', 'Bernard', 5, NULL);
-            ('Holly', 'Flax', 6, NULL);
-            ('Kelly', 'Kapoor', 7, 5);
-            ('Pam', 'Beesly', 8, NULL);
+VALUES  ('Michael', 'Scott', 1, 6);
+        ('Dwight', 'Schrute', 2, 1);
+        ('Jim', 'Halpert', 3, NULL);
+        ('Stanley', 'Hudson', 4, NULL);
+        ('Andy', 'Bernard', 5, NULL);
+        ('Holly', 'Flax', 6, NULL);
+        ('Kelly', 'Kapoor', 7, 5);
+        ('Pam', 'Beesly', 8, NULL);
 
 
 -- INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Dwight', 'Schrute', 2, 1);
