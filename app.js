@@ -13,7 +13,7 @@ const dbConfig = {
 
 const db = new Database(dbConfig);
 
-async function employeeManagerApp() {
+async function employeeManagementSystem() {
     console.log('Welcome to your Employee Management System!');
   
     while (true) {
