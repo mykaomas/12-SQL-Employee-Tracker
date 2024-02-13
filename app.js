@@ -1,17 +1,17 @@
 const inquirer = require('inquirer');
 const Database = require('./queries');
+const mysql = require('mysql2/promise');
 
-const dbConfig = {
-  host: 'localhost',
-  user: 'username',
-  password: 'password',
-  database: 'database_name',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+const dbConfig =
+{
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'ems_db'
 };
-
-const db = new Database(dbConfig);
+    console.log('Connected to ems_db')
+  
+  const db = new Database(dbConfig);
 
 async function employeeManagementSystem() {
     console.log('Welcome to your Employee Management System!');
@@ -63,6 +63,7 @@ async function employeeManagementSystem() {
           return;
       }
     }
+}
 
     async function viewDepartments() {
         const departments = await db.viewDepartments();
@@ -73,8 +74,13 @@ async function employeeManagementSystem() {
       async function viewRoles() {
         const jobs = await db.viewRoles();
         console.log("jobs:", jobs);
-        console.table(roles);
+        console.table(jobs);
       }
-  }
 
-employeeManagementSystem()
+      async function viewEmployees() {
+        const employees = await db.viewEmployees();
+        console.log("Employees:", employees);
+        console.table(employees);
+      }
+
+employeeManagementSystem();

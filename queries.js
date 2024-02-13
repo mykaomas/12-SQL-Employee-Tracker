@@ -15,25 +15,25 @@ class Database {
   }
 
   async viewDepartments() {
-    return await this.query('SELECT id, name FROM department');
+    return await this.query('SELECT id, name FROM departments');
   }
 
   async viewRoles() {
     return await this.query(`
-      SELECT job.id, title, salary, department.name AS department
-      FROM job
-      INNER JOIN department ON job.department_id = department.id
+    SELECT jobs.id, title, salary, departments.name AS department
+    FROM jobs
+    INNER JOIN departments ON jobs.department_id = departments.id
     `);
   }
 
   async viewEmployees() {
     return await this.query(`
-      SELECT employee.id, first_name, last_name, title AS role, salary, department.name AS department
-      FROM employee
-      INNER JOIN role ON employee.role_id = role.id
-      INNER JOIN department ON role.department_id = department.id
+      SELECT employees.id, first_name, last_name, title AS role, salary, departments.name AS department
+      FROM employees
+      INNER JOIN jobs ON employees.role_id = jobs.id
+      INNER JOIN departments ON jobs.department_id = departments.id
     `);
-  }
+}
 
 }
 
